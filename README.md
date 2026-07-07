@@ -17,3 +17,4 @@ During the surface code cycles, the model includes the following errors:
 
 ## References
 - Fowler, A. G., Mariantoni, M., Martinis, J. M., & Cleland, A. N. (2012). Surface codes: Towards practical large-scale quantum computation. _Physical Review A,_ 86(3). https://doi.org/10.1103/physreva.86.032324
+- Higgott, O. (2022). PyMatching: A Python Package for Decoding Quantum Codes with Minimum-Weight Perfect Matching. _ACM Transactions on Quantum Computing,_ 3(3), 1–16. https://doi.org/10.1145/3505637
