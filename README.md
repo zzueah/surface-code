@@ -14,9 +14,11 @@ During the surface code cycles, the model includes the following errors:
 3. Attempting to perform a measure qubit Hadamard operation $\hat{H}$ but performing in addition one of the single qubit oeprations $\hat{X}, \hat{Y}, \hat{Z}$, each with probability $p/3$.
 4. Reporting a wrong value of a measure qubit $\hat{Z}$ measurement and projecting to the wrong state with probability $p$.
 5. Instead of CNOT, performing one of the two-qubit operations:
+
 $$
 \hat{I}\otimes\hat{X},\hat{I}\otimes\hat{Y},\hat{I}\otimes\hat{Z},\hat{X}\otimes\hat{I},\hat{X}\otimes\hat{X},\hat{X}\otimes\hat{Y},\hat{X}\otimes\hat{Z},\hat{Y}\otimes\hat{I},\hat{Y}\otimes\hat{X},\hat{Y}\otimes\hat{Y},\hat{Y}\otimes\hat{Z},\hat{Z}\otimes\hat{I},\hat{Z}\otimes\hat{X},\hat{Z}\otimes\hat{Y},\hat{Z}\otimes\hat{Z},
 $$
+
 each with probability $p/15.$
 
 ## References
