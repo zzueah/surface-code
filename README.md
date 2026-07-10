@@ -1,5 +1,5 @@
 # surface-code
-- Ongoing review and follow-up of my previous undergraduate group research project; "Modeling Three-dimensional Surface Codes on Cubic Lattices" found in https://github.com/MoonSumin123/Surface_Code
+- Ongoing review and follow-up of my previous undergraduate group research project; "Modeling Three-dimensional Surface Codes on Cubic Lattices" in https://github.com/MoonSumin123/Surface_Code
 - This project is to practice "Surface codes: Towards practical large-scale quantum computation."
 
 ## 1. Error models for surface codes
