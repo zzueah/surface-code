@@ -8,6 +8,8 @@
 
 During the surface code cycles, errors arise from multiple sources: single-qubit gates, measurements, initializations, Hadamard gates, and CNOT gates. To simplify the model, we abstract the noises by assuming that all accumulated errors manifest on the data qubits immediately before the measurement cycle. Specifically, bit-flip ($X$) and phase-flip ($Z$) errors are probabilistically applied to the data qubits.
 
+![class-simple_figure](./)
+
 ### 1.2. Class-0
 
 TBA: errors per cycle considered
