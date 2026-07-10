@@ -15,7 +15,7 @@ During the surface code cycles, the model includes the following errors:
 
 To simplify errors, this model abstracted the noises by assuming that all accumulated errors manifest on the data qubits immediately before the measurement cycle. Specifically, bit-flip ($X$) and phase-flip ($Z$) errors are probabilistically applied to the data qubits.
 
-<img src="2D/class-simple_figure.png" width="50%">
+<img src="2D/class-simple_figure.png" height="500px" width="600px">
 
 ### 1.2. Class-0
 
