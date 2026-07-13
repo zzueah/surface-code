@@ -19,7 +19,7 @@ To simplify errors, this model abstracted the noises by assuming that all accumu
 
 ### 1.2. Class-0
 
-TBA: errors per cycle considered
+TBA: using stim
 
 ## References
 - Fowler, A. G., Mariantoni, M., Martinis, J. M., & Cleland, A. N. (2012). Surface codes: Towards practical large-scale quantum computation. _Physical Review A,_ 86(3). https://doi.org/10.1103/physreva.86.032324
