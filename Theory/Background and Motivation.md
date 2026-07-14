@@ -2,28 +2,20 @@
 
 ### Logical Gate
 
-**Definition 1.** A **logical unitary gate** is a unitary operator $U$ acting on the $n$ physical qubits of the code, that preserves its codespace $\mathcal{C},$ that  is
+**Definition 1.** A **logical unitary gate** is a unitary operator $U$ acting on the $n$ physical qubits of the code, that preserves its codespace $\mathcal{C},$ that is
 $$U|\psi\rangle\in\mathcal{C},\ \forall|\psi\rangle\in\mathcal{C}.$$
 
 **Example 1.** If we start in a state $a|000\rangle+n|111\rangle$ in the code space of the repetition code, we want our logical operation to give us another state $a'|000\rangle+b'|111\rangle$ within the same codespace.
 
 **Definition 2.** Consider an $[[n,k,d]]$ stabilizer code defined by the stabilizer group $\mathcal{S}$ where their elements are Pauli operators. Then the definition 1 can be reformulated as
-$$
-SU|\psi\rangle=U|\psi\rangle,\ \forall S\in\mathcal{S},\ \forall|\psi\rangle\in\mathcal{C}.
-$$
+$$SU|\psi\rangle=U|\psi\rangle,\ \forall S\in\mathcal{S},\ \forall|\psi\rangle\in\mathcal{C}.$$
 Multiplying by $U^\dagger$ on both sides,
-$$
-U^\dagger SU|\psi\rangle=|\psi\rangle,\ \forall S\in\mathcal{S},\ \forall|\psi\rangle\in\mathcal{C}
-$$
+$$U^\dagger SU|\psi\rangle=|\psi\rangle,\ \forall S\in\mathcal{S},\ \forall|\psi\rangle\in\mathcal{C}$$
 or, using the fact that the inverse of a logical gate is also a logical gate,
-$$
-U SU^\dagger|\psi\rangle=|\psi\rangle,\ \forall S\in\mathcal{S},\ \forall|\psi\rangle\in\mathcal{C}
-$$
+$$U SU^\dagger|\psi\rangle=|\psi\rangle,\ \forall S\in\mathcal{S},\ \forall|\psi\rangle\in\mathcal{C}$$
 
 **Definition 3.** Denote the group of (both Pauli and non-Pauli) stabilizers by $\tilde{\mathcal{S}.}$ A unitary operator $U$ is a **logical gate** if and only if
-$$
-USU^\dagger\in\tilde{\mathcal{S}},\ \forall S\in\tilde{\mathcal{S}}.
-$$
+$$USU^\dagger\in\tilde{\mathcal{S}},\ \forall S\in\tilde{\mathcal{S}}.$$
 
 **Example 2.** How the gates transform Pauli operators:
 - H: $X\leftrightarrow Z$
@@ -97,19 +89,13 @@ However, any operator made of $T$ and $T^\dagger$ on every physical qubit of the
 - The **Clifford group** is the group of unitary operators that map the group of Pauli operators to itself under conjugation. There is a structure connecting infinite classes of gates called the **Clifford hierarchy**.
     - **Pauli group ($\mathcal{C}_1$)** is at the bottom of this hierarchy. It contains the Pauli gates and their tensor products for $n$ qubits.
     - Members of the **Clifford group ($\mathcal{C}_2$)** map Pauli gates to Pauli gates under conjugation:
-    $$
-    \mathcal{C}_2=\{U:UPU^\dagger\in\mathcal{C}_1,\ \forall P\in\mathcal{C}_2\}.
-    $$
+    $$\mathcal{C}_2=\{U:UPU^\dagger\in\mathcal{C}_1,\ \forall P\in\mathcal{C}_2\}.$$
     As an example, this group conjugate Paulis such that $HZH^\dagger=X$ and $SYS^\dagger=-X.$ Note that $\mathcal{C}_1\subset\mathcal{C}_2$.
     - Members of **$\mathcal{C}_3$** map $\mathcal{C}_1$ gates to $\mathcal{C}_2$ gates under conjugation:
-    $$
-    \mathcal{C}_3=\{U:UPU^\dagger\in\mathcal{C}_2,\ \forall P\in\mathcal{C}_1\}.
-    $$
+    $$\mathcal{C}_3=\{U:UPU^\dagger\in\mathcal{C}_2,\ \forall P\in\mathcal{C}_1\}.$$
     For example, $T$ gate conjugates Pauli gates such that $TXT^\dagger=e^{-i\pi/4}SX~SX$ up to a global phase. $XS$ is in fact Clifford and $SX$ as well.
     - More generally, the $k^{\text{th}}$ level of the Clifford hierarchy for $k\geq 2$ is:
-    $$
-    \mathcal{C}_k=\{U:UPU^\dagger\in\mathcal{C}_{k-1},\ \forall P\in\mathcal{C}_1\}
-    $$
+    $$\mathcal{C}_k=\{U:UPU^\dagger\in\mathcal{C}_{k-1},\ \forall P\in\mathcal{C}_1\}$$
     There are infinitely many non-empty $\mathcal{C}_k$ sets, and $\mathcal{C}_1\subset\mathcal{C}_2\subset\cdots\mathcal{C}_k\subset\mathcal{C}_{k+1}\subset\cdots$.
 - **Gottesman-Knill theorem** states that by operations of such as 
     - Preparation of a qubit in the state $|0\rangle,$
@@ -133,9 +119,7 @@ With the Clifford hierarchy, we can fault-tolerantly implement a gate with only 
 </p>
 
 Suppose we apply a gate $U\in\mathcal{C}_3$ on Bob's half of the Bell state pair on the bottom, and proceed with $|\psi\rangle$ teleporation as usual. Just say Bob has a **magic state**. Upon measuring the top two qubits, a Pauli error $P$ occurs on the bottom of qubit. After measurement, the bottom qubit becomes $UP|\psi\rangle.$ Then we apply the identity $I=U^\dagger U$ to obtain
-$$
-UPI|\psi\rangle=UPU^\dagger U|\psi\rangle=CU|\psi\rangle.
-$$
+$$UPI|\psi\rangle=UPU^\dagger U|\psi\rangle=CU|\psi\rangle.$$
 $C$ is now exposed while $U$ is applied to the state $|\psi\rangle$ first. By the Clifford hierarchy, $C$ must be a Clifford gate. Thus, $C^\dagger = UPU^\dagger = C$ can be applied to produce $U|\psi\rangle,$ the desired non-Clifford gate. 
 
 The challenge of implementing the $\mathcal{C}_3$ gate, $U,$ has been shifted to preparing the magic state offline. We can purify the noisy states to be arbitrarily close to ideal magic states. This is the procedure performed by the **magic state distillation** algorithm.
