@@ -3,9 +3,7 @@
 ### Logical Gate
 
 **Definition 1.** A **logical unitary gate** is a unitary operator $U$ acting on the $n$ physical qubits of the code, that preserves its codespace $\mathcal{C},$ that  is
-$$
-U|\psi\rangle\in\mathcal{C},\ \forall|\psi\rangle\in\mathcal{C}.
-$$
+$$U|\psi\rangle\in\mathcal{C},\ \forall|\psi\rangle\in\mathcal{C}.$$
 
 **Example 1.** If we start in a state $a|000\rangle+n|111\rangle$ in the code space of the repetition code, we want our logical operation to give us another state $a'|000\rangle+b'|111\rangle$ within the same codespace.
 
