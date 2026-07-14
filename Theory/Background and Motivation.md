@@ -4,22 +4,22 @@
 
 **Definition 1.** A **logical unitary gate** is a unitary operator $U$ acting on the $n$ physical qubits of the code, that preserves its codespace $\mathcal{C},$ that  is
 $$
-U|\psi\rang\in\mathcal{C},\ \forall|\psi\rang\in\mathcal{C}.
+U|\psi\rangle\in\mathcal{C},\ \forall|\psi\rangle\in\mathcal{C}.
 $$
 
-**Example 1.** If we start in a state $a|000\rang+n|111\rang$ in the code space of the repetition code, we want our logical operation to give us another state $a'|000\rang+b'|111\rang$ within the same codespace.
+**Example 1.** If we start in a state $a|000\rangle+n|111\rangle$ in the code space of the repetition code, we want our logical operation to give us another state $a'|000\rangle+b'|111\rangle$ within the same codespace.
 
 **Definition 2.** Consider an $[[n,k,d]]$ stabilizer code defined by the stabilizer group $\mathcal{S}$ where their elements are Pauli operators. Then the definition 1 can be reformulated as
 $$
-SU|\psi\rang=U|\psi\rang,\ \forall S\in\mathcal{S},\ \forall|\psi\rang\in\mathcal{C}.
+SU|\psi\rangle=U|\psi\rangle,\ \forall S\in\mathcal{S},\ \forall|\psi\rangle\in\mathcal{C}.
 $$
 Multiplying by $U^\dagger$ on both sides,
 $$
-U^\dagger SU|\psi\rang=|\psi\rang,\ \forall S\in\mathcal{S},\ \forall|\psi\rang\in\mathcal{C}
+U^\dagger SU|\psi\rangle=|\psi\rangle,\ \forall S\in\mathcal{S},\ \forall|\psi\rangle\in\mathcal{C}
 $$
 or, using the fact that the inverse of a logical gate is also a logical gate,
 $$
-U SU^\dagger|\psi\rang=|\psi\rang,\ \forall S\in\mathcal{S},\ \forall|\psi\rang\in\mathcal{C}
+U SU^\dagger|\psi\rangle=|\psi\rangle,\ \forall S\in\mathcal{S},\ \forall|\psi\rangle\in\mathcal{C}
 $$
 
 **Definition 3.** Denote the group of (both Pauli and non-Pauli) stabilizers by $\tilde{\mathcal{S}.}$ A unitary operator $U$ is a **logical gate** if and only if
@@ -71,7 +71,7 @@ Consider the Hadamard gate acting on every qubits. Then any plaquette stabilizer
 <p align="center">
     <img src="./figure/trans-steane2.png" width="450px" height="200px">
 </p>
-our gate exchanges $X_L$ and $Z_L$ and is therefore a logical Hadamard. This phase is actually $1.$ Assume $H^{\otimes7}$ implements $e^{i\theta}H.$ Showing that $\lang0|\left(H^{\otimes7}|\bar{0}\rang\right) = 1/4,$ we can deduce $e^{i\theta} = 1.$
+our gate exchanges $X_L$ and $Z_L$ and is therefore a logical Hadamard. This phase is actually $1.$ Assume $H^{\otimes7}$ implements $e^{i\theta}H.$ Showing that $\lang0|\left(H^{\otimes7}|\bar{0}\rangle\right) = 1/4,$ we can deduce $e^{i\theta} = 1.$
 
 **Example 2.** Now we apply $S$ gate to all the physical qubits to find out whether an $S$ gate can be implemented transversally. Since $SXS^\dagger=Y,$ every $X$ plaquette will turn into $Y^{\otimes4}$ under the action of our gate. Since $Y^{\otimes4}=(iXZ)^{\otimes4}=X^{\otimes4}Z^{\otimes4}$, so $Y^{\otimes4}$ is a stabilizer. Moreover, since $SZS^\dagger=Z,$ Z plaquettes are preserved. Hence, this gate is a valid transversal logical gate.
 
@@ -114,7 +114,7 @@ However, any operator made of $T$ and $T^\dagger$ on every physical qubit of the
     $$
     There are infinitely many non-empty $\mathcal{C}_k$ sets, and $\mathcal{C}_1\subset\mathcal{C}_2\subset\cdots\mathcal{C}_k\subset\mathcal{C}_{k+1}\subset\cdots$.
 - **Gottesman-Knill theorem** states that by operations of such as 
-    - Preparation of a qubit in the state $|0\rang,$
+    - Preparation of a qubit in the state $|0\rangle,$
     - Application of unitary operators from the Clifford group,
     - Measurment of an eigenvalue of a Pauli operator on any qubit, 
 
@@ -134,10 +134,10 @@ With the Clifford hierarchy, we can fault-tolerantly implement a gate with only 
     <img src="./figure/magic.png" width="600px" height="300px">
 </p>
 
-Suppose we apply a gate $U\in\mathcal{C}_3$ on Bob's half of the Bell state pair on the bottom, and proceed with $|\psi\rang$ teleporation as usual. Just say Bob has a **magic state**. Upon measuring the top two qubits, a Pauli error $P$ occurs on the bottom of qubit. After measurement, the bottom qubit becomes $UP|\psi\rang.$ Then we apply the identity $I=U^\dagger U$ to obtain
+Suppose we apply a gate $U\in\mathcal{C}_3$ on Bob's half of the Bell state pair on the bottom, and proceed with $|\psi\rangle$ teleporation as usual. Just say Bob has a **magic state**. Upon measuring the top two qubits, a Pauli error $P$ occurs on the bottom of qubit. After measurement, the bottom qubit becomes $UP|\psi\rangle.$ Then we apply the identity $I=U^\dagger U$ to obtain
 $$
-UPI|\psi\rang=UPU^\dagger U|\psi\rang=CU|\psi\rang.
+UPI|\psi\rangle=UPU^\dagger U|\psi\rangle=CU|\psi\rangle.
 $$
-$C$ is now exposed while $U$ is applied to the state $|\psi\rang$ first. By the Clifford hierarchy, $C$ must be a Clifford gate. Thus, $C^\dagger = UPU^\dagger = C$ can be applied to produce $U|\psi\rang,$ the desired non-Clifford gate. 
+$C$ is now exposed while $U$ is applied to the state $|\psi\rangle$ first. By the Clifford hierarchy, $C$ must be a Clifford gate. Thus, $C^\dagger = UPU^\dagger = C$ can be applied to produce $U|\psi\rangle,$ the desired non-Clifford gate. 
 
 The challenge of implementing the $\mathcal{C}_3$ gate, $U,$ has been shifted to preparing the magic state offline. We can purify the noisy states to be arbitrarily close to ideal magic states. This is the procedure performed by the **magic state distillation** algorithm.
