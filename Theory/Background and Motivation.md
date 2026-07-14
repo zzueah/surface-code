@@ -29,10 +29,12 @@ $$USU^\dagger\in\tilde{\mathcal{S}},\ \forall S\in\tilde{\mathcal{S}}.$$
 <p align="center">
     <img src="./figure/fig-example-ft1.png" width="200px" height="200px">
 </p>
+
 Now imagine that an $X$ error appears on the top-left qubit. Since $\text{CNOT}(XI)\text{CNOT}=XX,$ or equivalently $\text{CNOT}(XI)=(XX)\text{CNOT}.$
 <p align="center">
     <img src="./figure/fig-example-ft2.png" width="300px" height="100px">
 </p>
+
 Therefore, a single $X$ error propagates into two $X$ errors once we have applied our logical gate.
 
 **Definition 1.** A **effective distance** is the minimum number of physical errors that creates a logical error after applying the gate.
@@ -45,6 +47,7 @@ Therefore, a single $X$ error propagates into two $X$ errors once we have applie
 <p align="center">
     <img src="./figure/fig-example-ft3.png" width="200px" height="200px">
 </p>
+
 Then, a single qubit $X$ error can propagate into the number of distance $X$ errors and create a logical error, reducing its effective distance to $1.$ Generalizing its codes of size $L\times L,$ this is not fault-tolerant.
 
 ### Transversal Gate
@@ -57,11 +60,13 @@ Then, a single qubit $X$ error can propagate into the number of distance $X$ err
 <p align="center">
     <img src="./figure/trans-steane.png" width="220px" height="200px">
 </p>
+
 Consider the Hadamard gate acting on every qubits. Then any plaquette stabilizer $XXXX$ will turn into $ZZZZ$ and vice versa. Since the resulting operators are stabilizers as well, our gate perserves the stabilizer group. So it's a logical gate. Even if we pick any representative logical $X$ and $Z$ operator, such as those:
 <p align="center">
     <img src="./figure/trans-steane2.png" width="450px" height="200px">
 </p>
-our gate exchanges $X_L$ and $Z_L$ and is therefore a logical Hadamard. This phase is actually $1.$ Assume $H^{\otimes7}$ implements $e^{i\theta}H.$ Showing that $\lang0|\left(H^{\otimes7}|\bar{0}\rangle\right) = 1/4,$ we can deduce $e^{i\theta} = 1.$
+
+our gate exchanges $X_L$ and $Z_L$ and is therefore a logical Hadamard. This phase is actually $1.$ Assume $H^{\otimes7}$ implements $e^{i\theta}H.$ Showing that $\langle0|\left(H^{\otimes7}|\bar{0}\rangle\right) = 1/4,$ we can deduce $e^{i\theta} = 1.$
 
 **Example 2.** Now we apply $S$ gate to all the physical qubits to find out whether an $S$ gate can be implemented transversally. Since $SXS^\dagger=Y,$ every $X$ plaquette will turn into $Y^{\otimes4}$ under the action of our gate. Since $Y^{\otimes4}=(iXZ)^{\otimes4}=X^{\otimes4}Z^{\otimes4}$, so $Y^{\otimes4}$ is a stabilizer. Moreover, since $SZS^\dagger=Z,$ Z plaquettes are preserved. Hence, this gate is a valid transversal logical gate.
 
@@ -71,6 +76,7 @@ To implement an actual logical $S$, we instead apply $S^\dagger$ everywhere, but
 <p align="center">
     <img src="./figure/trans-steane3.png" width="220px" height="200px">
 </p>
+
 However, any operator made of $T$ and $T^\dagger$ on every physical qubit of the Stean code does not implement a logical gate.
 
 **Example 3.** $\text{CNOT}$ gate is transversal for any CSS code. However, despite its simplicity, it is too impractical when dealing with a planar architecture. It requires either putting one code block above the other or having long-range connections. Alternatively, methods based on lattice surgery or code deformation are used.
@@ -95,8 +101,9 @@ However, any operator made of $T$ and $T^\dagger$ on every physical qubit of the
     $$\mathcal{C}_3=\{U:UPU^\dagger\in\mathcal{C}_2,\ \forall P\in\mathcal{C}_1\}.$$
     For example, $T$ gate conjugates Pauli gates such that $TXT^\dagger=e^{-i\pi/4}SX~SX$ up to a global phase. $XS$ is in fact Clifford and $SX$ as well.
     - More generally, the $k^{\text{th}}$ level of the Clifford hierarchy for $k\geq 2$ is:
-    $$\mathcal{C}_k=\{U:UPU^\dagger\in\mathcal{C}_{k-1},\ \forall P\in\mathcal{C}_1\}$$
-    There are infinitely many non-empty $\mathcal{C}_k$ sets, and $\mathcal{C}_1\subset\mathcal{C}_2\subset\cdots\mathcal{C}_k\subset\mathcal{C}_{k+1}\subset\cdots$.
+    $$\mathcal{C}_k=\{U:UPU^\dagger\in\mathcal{C}_{k-1},\ \forall P\in\mathcal{C}_1\}.$$
+    There are infinitely many non-empty $\mathcal{C}_k$ sets, and $\mathcal{C}_1\subset\mathcal{C}_2\subset\cdots\mathcal{C}_k\subset\mathcal{C}_{k+1}\subset\cdots.$
+
 - **Gottesman-Knill theorem** states that by operations of such as 
     - Preparation of a qubit in the state $|0\rangle,$
     - Application of unitary operators from the Clifford group,
